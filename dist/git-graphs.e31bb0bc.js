@@ -2561,20 +2561,23 @@ var global = arguments[3];
 var _js = require("@gitgraph/js");
 
 // Get the graph container HTML element.
-var graphContainer = document.getElementById("graph-container"); // Instantiate the graph.
+var graphContainer = document.getElementById("graph-container");
+var graphOptions = {
+  author: 'Chris <chrisgopher@rietta.com>',
+  orientation: 'horizontal' // Instantiate the graph.
 
-var gitgraph = (0, _js.createGitgraph)(graphContainer); // Simulate git commands with Gitgraph API.
+};
+var gitgraph = (0, _js.createGitgraph)(graphContainer, graphOptions); // Simulate git commands with Gitgraph API.
 
 var master = gitgraph.branch("master");
-master.commit("Initial commit");
+master.commit('Initial Commit');
 master.commit("1");
 master.commit("2");
-master.commit('3');
-master.commit('4');
-/*const featureBranch = gitgraph.branch("feature-branch");*/
-
-/*featureBranch.commit("Add TypeScript");*/
-//master.squash(featureBranch).tag("v1.0.1");
+master.commit('3(squashed commit)'); //master.commit('4');
+//const featureBranch = gitgraph.branch("feature-branch");
+//featureBranch.commit("3");
+//featureBranch.commit("4");
+//master.merge(featureBranch)
 },{"@gitgraph/js":"node_modules/@gitgraph/js/lib/gitgraph.umd.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -2603,7 +2606,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63051" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55105" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gitgraph/js": "^1.2.0"
+    "@gitgraph/js": "^1.2.0",
+    "gitgraph.js": "^1.15.2"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.3"
